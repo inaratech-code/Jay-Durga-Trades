@@ -144,16 +144,16 @@ export default function Footer() {
         {/* Closing copyright notice without any prohibited social links */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-[#F8F5F0]/50">
           <p className="font-sans">
-            &copy; {currentYear} Jay Durga International Trade &amp; Inara Tech (
+            &copy; {currentYear} Jay Durga International Trade &amp;{" "}
             <a
               href="https://www.inaratech.com.np"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#F8F5F0]/50 no-underline hover:text-[#F8F5F0]/70 hover:no-underline transition-colors"
             >
-              www.inaratech.com.np
+              Inara Tech
             </a>
-            ). All Rights Reserved.
+            . All Rights Reserved.
           </p>
           <p className="font-sans tracking-wide">
             Designed to Premium Standards • Kathmandu, Nepal
