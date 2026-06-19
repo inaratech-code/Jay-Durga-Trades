@@ -37,11 +37,11 @@ On mobile, brand and category sections appear in an easy **two-column** layout. 
 
 | Channel | Details |
 |--------|---------|
-| **WhatsApp / Mobile** | +977 9851048223 |
-| **Email** | agrawalnarayan@hotmail.com |
-| **Landline** | 01-5321836 / 01-5324305 |
+| **WhatsApp / Mobile** | 
+| **Email** | 
+| **Landline** | 
 | **Address** | Makhan, Kathmandu, Nepal |
-| **Managing Director** | Narayan Kumar Agrawal |
+| **Managing Director** | 
 | **Office hours** | Sun – Fri, 10:00 AM – 6:30 PM (Nepal time) |
 
 Click **Get In Touch** or the WhatsApp button on the website to start a chat with a pre-filled inquiry message.
