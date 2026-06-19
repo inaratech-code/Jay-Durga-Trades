@@ -7,22 +7,22 @@ import { CATEGORY_STOCK_IMAGES, STOCK_IMAGES } from "../constants/images";
 import { useScrollToSection } from "../hooks/useScrollToSection";
 
 const LOCAL_BRAND_IMAGES: Record<string, string> = {
-  "Beauty of Joseon": "Beauty of Joseon.png",
-  COSRX: "COSRX.png",
-  CeraVe: "CeraVe.png",
-  Cetaphil: "Cetaphil.png",
-  "Dr. Althea": "Dr. Athens.png",
-  SKIN1004: "SKIN1004.png",
-  "I'm From": "I'm From.png",
-  "St. Ives": "St. Ives.png",
-  Dove: "Dove.png",
-  "Johnson's": "Johnson & Johnson.png",
-  Gillette: "Gillette.png",
+  "Beauty of Joseon": "Beauty of Joseon.jpg",
+  COSRX: "COSRX.jpg",
+  CeraVe: "CeraVe.jpg",
+  Cetaphil: "Cetaphil.jpg",
+  "Dr. Althea": "Dr. Athens.jpg",
+  SKIN1004: "SKIN1004.jpg",
+  "I'm From": "I'm From.jpg",
+  "St. Ives": "St. Ives.jpg",
+  Dove: "Dove.jpg",
+  "Johnson's": "Johnson & Johnson.jpg",
+  Gillette: "Gillette.jpg",
   Enchanteur: "Enchanteur.jpg",
-  "Maybelline New York": "Maybelline.png",
-  "L'Oréal Paris": "L'Oréal.png",
+  "Maybelline New York": "Maybelline.jpg",
+  "L'Oréal Paris": "L'Oréal.jpg",
   "MAC Cosmetics": "MAC.jpg",
-  "Rimmel London": "Rimmel.png",
+  "Rimmel London": "Rimmel.jpg",
   TIRTIR: "Tir Tir.jpg",
   "Miss Claire": "Miss Claire.jpg",
   "Swiss Beauty": "Swiss Beauty.jpg",
@@ -157,6 +157,8 @@ export default function BrandShowcase() {
                   src={imagePath}
                   alt=""
                   aria-hidden="true"
+                  width={640}
+                  height={480}
                   className="absolute inset-0 z-[1] h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                   decoding="async"

@@ -55,6 +55,10 @@ export default function ProductCategories() {
                 <img
                   src={cat.image}
                   alt={cat.title}
+                  width={640}
+                  height={480}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 

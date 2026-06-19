@@ -39,6 +39,10 @@ export default function AboutUs() {
                 <img
                   src={STOCK_IMAGES.aboutTrade}
                   alt="Premium Skincare Sourcing and Purity"
+                  width={600}
+                  height={800}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full aspect-[3/4] object-cover grayscale-[15%] brightness-[0.97]"
                 />
                 

@@ -196,6 +196,11 @@ export default function Hero() {
                         <img
                           src={card.image}
                           alt={card.title}
+                          width={400}
+                          height={300}
+                          loading={card.id === "skincare" ? "eager" : "lazy"}
+                          decoding="async"
+                          fetchPriority={card.id === "skincare" ? "high" : "auto"}
                           onError={() => {
                             setImageError((prev) => ({ ...prev, [card.id]: true }));
                           }}
