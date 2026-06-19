@@ -1,19 +1,23 @@
-import telephoneRedIcon from "../assets/telephone-red.png";
+import telephoneRedWebp from "../assets/telephone-red.webp";
+import telephoneRedPng from "../assets/telephone-red.png";
 
 type TelephoneIconProps = {
   className?: string;
 };
 
-export default function TelephoneIcon({ className = "w-5 h-5" }: TelephoneIconProps) {
+export default function TelephoneIcon({ className = "w-4 h-4" }: TelephoneIconProps) {
   return (
-    <img
-      src={telephoneRedIcon}
-      alt=""
-      aria-hidden="true"
-      className={className}
-      width={20}
-      height={20}
-      decoding="async"
-    />
+    <picture>
+      <source srcSet={telephoneRedWebp} type="image/webp" />
+      <img
+        src={telephoneRedPng}
+        alt=""
+        aria-hidden="true"
+        className={className}
+        width={16}
+        height={16}
+        decoding="async"
+      />
+    </picture>
   );
 }
