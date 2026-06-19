@@ -19,8 +19,12 @@ export default function Logo({ className = "", showText = true, size = "md" }: L
       <img
         src="/logo.png"
         alt="Jay Durga International Trade Logo"
+        width={480}
+        height={320}
         className={`${heights[size]} w-auto object-contain flex-shrink-0`}
         loading="eager"
+        decoding="async"
+        fetchPriority="high"
         draggable={false}
       />
     </div>
