@@ -27,29 +27,29 @@ export default function Footer() {
     <footer className="bg-[#1A1A1A] text-[#F8F5F0] pt-20 pb-12 border-t border-[#A61E22]/20 font-sans">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         
-        {/* Main Grid structure — 2 columns on mobile */}
-        <div className="grid grid-cols-2 md:grid-cols-12 gap-6 sm:gap-8 md:gap-12 pb-12 sm:pb-16 border-b border-[#A61E22]/10">
-          
-          {/* Column 1: Core Brand Identity — full width on mobile */}
-          <div className="col-span-2 md:col-span-5 space-y-4 sm:space-y-6">
-            <Logo showText={true} size="lg" />
-            <p className="text-[#F8F5F0]/70 text-[10px] sm:text-xs leading-relaxed max-w-sm">
-              Jay Durga International Trade operates as Kathmandu’s trusted importer and nationwide distributor of leading clinical skincare, dynamic color cosmetics, and professional beauty essentials.
-            </p>
-            <div className="flex items-center gap-2 sm:gap-2.5 bg-[#A61E22]/10 border border-[#A61E22]/30 px-3 py-1.5 sm:px-4 sm:py-2 w-fit">
-              <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#A61E22] shrink-0" />
-              <span className="text-[8px] sm:text-[10px] tracking-widest font-extrabold uppercase text-[#A61E22]">
-                Licensed Importer • Nepal Govt. Approved
-              </span>
-            </div>
+        {/* Centered brand logo */}
+        <div className="flex flex-col items-center text-center pb-10 sm:pb-12 border-b border-[#A61E22]/10 mb-10 sm:mb-12">
+          <Logo size="lg" />
+          <p className="text-[#F8F5F0]/70 text-[10px] sm:text-xs leading-relaxed max-w-md mx-auto mt-4 sm:mt-6">
+            Jay Durga International Trade operates as Kathmandu’s trusted importer and nationwide distributor of leading clinical skincare, dynamic color cosmetics, and professional beauty essentials.
+          </p>
+          <div className="flex items-center gap-2 sm:gap-2.5 bg-[#A61E22]/10 border border-[#A61E22]/30 px-3 py-1.5 sm:px-4 sm:py-2 w-fit mx-auto mt-4 sm:mt-5">
+            <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#A61E22] shrink-0" />
+            <span className="text-[8px] sm:text-[10px] tracking-widest font-extrabold uppercase text-[#A61E22]">
+              Licensed Importer • Nepal Govt. Approved
+            </span>
           </div>
+        </div>
 
-          {/* Column 2: Quick Links */}
-          <div className="col-span-1 md:col-span-3 space-y-3 sm:space-y-5 text-left">
+        {/* Navigation + contact grid */}
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-6 sm:gap-8 md:gap-12 pb-12 sm:pb-16 border-b border-[#A61E22]/10">
+
+          {/* Column 1: Quick Links */}
+          <div className="col-span-1 md:col-span-6 space-y-3 sm:space-y-5 text-left md:text-center md:items-center md:flex md:flex-col">
             <h4 className="font-serif text-xs sm:text-sm tracking-widest text-[#A61E22] uppercase font-bold">
               Quick Navigation
             </h4>
-            <ul className="space-y-2 sm:space-y-3">
+            <ul className="space-y-2 sm:space-y-3 md:inline-block md:text-left">
               {[
                 { label: "Home Base", href: "#home" },
                 { label: "Corporate About", href: "#about" },
@@ -71,13 +71,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Complete Contact info */}
-          <div className="col-span-1 md:col-span-4 space-y-3 sm:space-y-5 text-left text-[10px] sm:text-xs">
+          {/* Column 2: Complete Contact info */}
+          <div className="col-span-1 md:col-span-6 space-y-3 sm:space-y-5 text-left md:text-center md:items-center md:flex md:flex-col text-[10px] sm:text-xs">
             <h4 className="font-serif text-xs sm:text-sm tracking-widest text-[#A61E22] uppercase font-bold">
               Registry Office
             </h4>
             
-            <ul className="space-y-3 sm:space-y-4 text-[#F8F5F0]/80">
+            <ul className="space-y-3 sm:space-y-4 text-[#F8F5F0]/80 md:inline-block md:text-left">
               {/* Contact Person */}
               <li className="space-y-0.5">
                 <span className="block text-[8px] sm:text-[9px] tracking-widest uppercase text-[#F8F5F0]/40 font-bold">
