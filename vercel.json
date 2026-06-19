@@ -3,11 +3,20 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/((?!assets/|logo\\.png|images/|makeup-brands/|favicon\\.ico|site\\.webmanifest).*)",
+      "source": "/((?!assets/|fonts/|icons/|logo\\.png|images/|makeup-brands/|favicon\\.ico|site\\.webmanifest).*)",
       "destination": "/index.html"
     }
   ],
   "headers": [
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
     {
       "source": "/images/(.*)",
       "headers": [

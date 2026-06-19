@@ -39,10 +39,10 @@ export default function ProductCategories() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 md:gap-8">
           {CATEGORIES.map((cat, i) => (
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.35, delay: i * 0.05 }}
               key={cat.id}
               className="group relative bg-[#F8F5F0] border border-[#A61E22]/10 flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 min-h-[320px] sm:min-h-[420px] md:min-h-[500px]"
             >
@@ -57,8 +57,9 @@ export default function ProductCategories() {
                   alt={cat.title}
                   width={640}
                   height={480}
-                  loading="lazy"
+                  loading={i === 0 ? "eager" : "lazy"}
                   decoding="async"
+                  fetchPriority={i === 0 ? "high" : "auto"}
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 

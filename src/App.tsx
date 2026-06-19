@@ -9,7 +9,6 @@ import ProductCategories from "./components/ProductCategories";
 import WhyChooseUs from "./components/WhyChooseUs";
 import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";
-import WhatsAppButton from "./components/WhatsAppButton";
 import { useScrollToSection } from "./hooks/useScrollToSection";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -51,9 +50,7 @@ export default function App() {
       {/* LUXURY NO-SOCIAL EMBEDDED FOOTER */}
       <Footer />
 
-      <WhatsAppButton />
-
-      {/* Elegant Back to Top Floating Action button */}
+      {/* Back to Top */}
       <AnimatePresence>
         {showToTopBtn && (
           <motion.button
@@ -61,7 +58,7 @@ export default function App() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 10 }}
             onClick={scrollToTop}
-            className="fixed bottom-6 right-24 sm:right-28 z-40 bg-[#A61E22] text-white p-3 rounded-none shadow-2xl border border-[#D4AF37]/35 hover:bg-[#8B0000] hover:-translate-y-0.5 duration-300 transition-all flex items-center justify-center cursor-pointer"
+            className="fixed bottom-6 right-6 z-40 bg-[#A61E22] text-white p-3 rounded-none shadow-2xl border border-[#D4AF37]/35 hover:bg-[#8B0000] hover:-translate-y-0.5 duration-300 transition-all flex items-center justify-center cursor-pointer"
             title="Scroll To Top"
             aria-label="Scroll to top"
           >

@@ -138,16 +138,16 @@ export default function BrandShowcase() {
         {/* Brands Grid with layout animations */}
         <motion.div layout className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
           <AnimatePresence mode="popLayout">
-            {filteredBrands.map((brand) => {
+            {filteredBrands.map((brand, index) => {
               const imagePath = getBrandImagePath(brand);
               
               return (
               <motion.div
                 layout
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.25 }}
                 key={brand.id}
                 onClick={() => setSelectedBrandDetail(brand)}
                 className="group relative flex flex-col justify-between min-h-[220px] sm:min-h-[280px] lg:min-h-[320px] cursor-pointer overflow-hidden rounded-xl sm:rounded-2xl border border-black/10 bg-[#1A1A1A] transition-all duration-500 hover:shadow-2xl hover:shadow-black/30"
@@ -160,8 +160,9 @@ export default function BrandShowcase() {
                   width={640}
                   height={480}
                   className="absolute inset-0 z-[1] h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
+                  loading={index < 4 ? "eager" : "lazy"}
                   decoding="async"
+                  fetchPriority={index < 2 ? "high" : "auto"}
                   onError={(e) => {
                     const fallback = getBrandImageFallback(brand);
                     if (e.currentTarget.src !== fallback) {

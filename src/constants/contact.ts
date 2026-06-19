@@ -1,7 +1,14 @@
 export const CONTACT_PHONE_DISPLAY = "+977 9851048223";
 export const CONTACT_PHONE_TEL = "tel:+9779851048223";
+export const CONTACT_LANDLINES = [
+  { display: "01-5321836", tel: "tel:+97715321836" },
+  { display: "01-5324305", tel: "tel:+97715324305" },
+] as const;
 export const CONTACT_EMAIL = "agrawalnarayan@hotmail.com";
 export const CONTACT_MAILTO = `mailto:${CONTACT_EMAIL}`;
+export const CONTACT_ADDRESS = "Makhan Tole, Kathmandu, Nepal";
+export const CONTACT_MAP_URL =
+  "https://www.google.com/maps/search/?api=1&query=Makhan+Tole,+Kathmandu,+Nepal";
 
 const WHATSAPP_PHONE = "9779851048223";
 const WHATSAPP_MESSAGE =

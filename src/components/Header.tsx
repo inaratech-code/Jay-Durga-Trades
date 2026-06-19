@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
+import { Menu, X, Mail, MapPin } from "lucide-react";
 import { useLenis } from "lenis/react";
 import Logo from "./Logo";
 import { motion, AnimatePresence } from "motion/react";
@@ -7,8 +7,11 @@ import {
   CONTACT_EMAIL,
   CONTACT_MAILTO,
   CONTACT_PHONE_DISPLAY,
+  CONTACT_ADDRESS,
+  CONTACT_MAP_URL,
 } from "../constants/contact";
 import WhatsAppLink from "./WhatsAppLink";
+import WhatsAppIcon from "./WhatsAppIcon";
 import { useScrollToSection } from "../hooks/useScrollToSection";
 
 const SECTIONS = ["home", "about", "brands", "categories", "why-choose-us", "contact"];
@@ -56,7 +59,7 @@ export default function Header() {
       <div className="bg-[#1A1A1A] text-[#F8F5F0]/80 text-[11px] py-2 px-4 md:px-8 flex justify-between items-center border-b border-[#D4AF37]/20 z-50 relative font-sans">
         <div className="flex items-center gap-4 md:gap-6">
           <WhatsAppLink className="flex items-center gap-1.5 hover:text-[#D4AF37] transition-colors">
-            <Phone className="w-3.5 h-3.5 text-[#D4AF37]" strokeWidth={2} />
+            <WhatsAppIcon className="w-3.5 h-3.5 text-[#D4AF37]" />
             {CONTACT_PHONE_DISPLAY}
           </WhatsAppLink>
           <span className="hidden sm:flex items-center gap-1.5 hover:text-[#D4AF37] transition-colors">
@@ -71,10 +74,15 @@ export default function Header() {
             <Mail className="w-3.5 h-3.5 text-[#D4AF37]" />
             {CONTACT_EMAIL}
           </a>
-          <span className="hidden md:flex items-center gap-1.5">
+          <a
+            href={CONTACT_MAP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:flex items-center gap-1.5 hover:text-[#D4AF37] transition-colors"
+          >
             <MapPin className="w-3.5 h-3.5 text-[#D4AF37]" />
-            Kathmandu, Nepal
-          </span>
+            {CONTACT_ADDRESS}
+          </a>
         </div>
       </div>
 

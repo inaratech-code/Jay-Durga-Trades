@@ -1,13 +1,17 @@
 import React from "react";
-import { Phone, Mail, MapPin, Clock, ShieldCheck, User } from "lucide-react";
+import { Mail, MapPin, Clock, ShieldCheck, User } from "lucide-react";
 import { motion } from "motion/react";
 import {
   CONTACT_EMAIL,
   CONTACT_MAILTO,
   CONTACT_PHONE_DISPLAY,
   CONTACT_PHONE_TEL,
+  CONTACT_ADDRESS,
+  CONTACT_MAP_URL,
+  CONTACT_LANDLINES,
 } from "../constants/contact";
 import WhatsAppIcon from "./WhatsAppIcon";
+import TelephoneIcon from "./TelephoneIcon";
 import WhatsAppLink from "./WhatsAppLink";
 
 export default function ContactUs() {
@@ -111,9 +115,14 @@ export default function ContactUs() {
                   <h4 className="text-[10px] uppercase tracking-[0.15em] font-extrabold text-[#1A1A1A]/50 font-sans">
                     Corporate Headquarters
                   </h4>
-                  <p className="text-base font-serif font-bold text-[#1A1A1A] mt-1.5">
-                    Makhan, Kathmandu, Nepal
-                  </p>
+                  <a
+                    href={CONTACT_MAP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-base font-serif font-bold text-[#1A1A1A] mt-1.5 hover:text-[#A61E22] transition-colors underline-offset-2 hover:underline inline-block"
+                  >
+                    {CONTACT_ADDRESS}
+                  </a>
                 </div>
               </div>
               <p className="text-xs text-[#1A1A1A]/60 font-sans mt-4 pt-4 border-t border-[#F8F5F0]">
@@ -132,18 +141,15 @@ export default function ContactUs() {
             >
               <div className="space-y-4">
                 <div className="w-10 h-10 bg-[#F8F5F0] border border-[#A61E22]/10 flex items-center justify-center">
-                  <Phone className="w-4.5 h-4.5 text-[#A61E22]" />
+                  <WhatsAppIcon className="w-4.5 h-4.5 text-[#A61E22]" />
                 </div>
                 <div>
                   <h4 className="text-[10px] uppercase tracking-[0.15em] font-extrabold text-[#1A1A1A]/50 font-sans">
                     Direct Voice Portals
                   </h4>
-                  <WhatsAppLink className="block text-base font-sans font-bold text-[#1A1A1A] mt-1.5 hover:text-[#A61E22] transition-colors">
+                  <WhatsAppLink className="inline-flex items-center gap-2 text-base font-sans font-bold text-[#1A1A1A] mt-1.5 hover:text-[#A61E22] transition-colors">
+                    <WhatsAppIcon className="w-4 h-4 text-[#A61E22]" />
                     {CONTACT_PHONE_DISPLAY}
-                  </WhatsAppLink>
-                  <WhatsAppLink className="inline-flex items-center gap-2 mt-3 text-xs font-bold uppercase tracking-wider text-[#25D366] hover:text-[#1ebe57] transition-colors">
-                    <WhatsAppIcon className="w-4 h-4" />
-                    Chat on WhatsApp
                   </WhatsAppLink>
                   <a
                     href={CONTACT_PHONE_TEL}
@@ -151,10 +157,19 @@ export default function ContactUs() {
                   >
                     Or call directly
                   </a>
-                  <div className="text-xs text-[#1A1A1A]/75 font-sans mt-1">
-                    <span className="font-semibold text-[#1A1A1A]/40 block text-[9px] uppercase tracking-wider mt-2">Landlines</span>
-                    <span className="block font-medium mt-0.5">01-5321836</span>
-                    <span className="block font-medium">01-5324305</span>
+                  <div className="flex items-start gap-2 mt-2">
+                    <TelephoneIcon className="w-4 h-4 shrink-0 mt-0.5" />
+                    <div className="text-xs font-sans">
+                      {CONTACT_LANDLINES.map((line) => (
+                        <a
+                          key={line.display}
+                          href={line.tel}
+                          className="block font-medium hover:text-[#A61E22] transition-colors"
+                        >
+                          {line.display}
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

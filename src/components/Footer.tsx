@@ -1,12 +1,16 @@
 import React from "react";
 import Logo from "./Logo";
-import { Mail, Phone, MapPin, Award } from "lucide-react";
+import { Mail, MapPin, Award } from "lucide-react";
 import {
   CONTACT_EMAIL,
   CONTACT_MAILTO,
   CONTACT_PHONE_DISPLAY,
+  CONTACT_ADDRESS,
+  CONTACT_MAP_URL,
+  CONTACT_LANDLINES,
 } from "../constants/contact";
 import WhatsAppIcon from "./WhatsAppIcon";
+import TelephoneIcon from "./TelephoneIcon";
 import WhatsAppLink from "./WhatsAppLink";
 import { useScrollToSection } from "../hooks/useScrollToSection";
 
@@ -87,21 +91,42 @@ export default function Footer() {
               {/* Physical Location */}
               <li className="flex gap-2 items-start">
                 <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#A61E22] shrink-0 mt-0.5" />
-                <span className="leading-snug">Makhan, Kathmandu, Nepal</span>
+                <a
+                  href={CONTACT_MAP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="leading-snug hover:text-[#A61E22] transition-colors underline-offset-2 hover:underline"
+                >
+                  {CONTACT_ADDRESS}
+                </a>
               </li>
 
-              {/* Contact Numbers */}
+              {/* Mobile / WhatsApp */}
               <li className="flex gap-2 items-start">
-                <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#A61E22] shrink-0 mt-0.5" />
-                <div className="space-y-1">
-                  <WhatsAppLink className="flex items-start gap-1.5 text-white hover:text-[#25D366] font-semibold transition-colors leading-snug">
-                    <WhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 mt-0.5" />
-                    <span>{CONTACT_PHONE_DISPLAY}</span>
-                  </WhatsAppLink>
-                  <span className="block text-[9px] sm:text-[11px] text-[#F8F5F0]/60 leading-snug">
-                    01-5321836 / 01-5324305
-                  </span>
-                </div>
+                <WhatsAppLink className="flex items-start gap-2 text-white hover:text-[#25D366] font-semibold transition-colors leading-snug">
+                  <WhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 mt-0.5 text-[#A61E22]" />
+                  <span>{CONTACT_PHONE_DISPLAY}</span>
+                </WhatsAppLink>
+              </li>
+
+              {/* Landlines */}
+              <li className="flex gap-2 items-start">
+                <TelephoneIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px] shrink-0 mt-0.5" />
+                <span className="leading-snug">
+                  {CONTACT_LANDLINES.map((line, index) => (
+                    <span key={line.display}>
+                      {index > 0 && (
+                        <span className="text-[#F8F5F0]/60"> / </span>
+                      )}
+                      <a
+                        href={line.tel}
+                        className="hover:text-[#A61E22] transition-colors"
+                      >
+                        {line.display}
+                      </a>
+                    </span>
+                  ))}
+                </span>
               </li>
 
               {/* Email Address */}
