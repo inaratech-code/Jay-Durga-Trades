@@ -1,0 +1,132 @@
+import React from "react";
+import Logo from "./Logo";
+import { Mail, Phone, MapPin, Award } from "lucide-react";
+import {
+  CONTACT_EMAIL,
+  CONTACT_MAILTO,
+  CONTACT_PHONE_DISPLAY,
+} from "../constants/contact";
+import WhatsAppIcon from "./WhatsAppIcon";
+import WhatsAppLink from "./WhatsAppLink";
+import { useScrollToSection } from "../hooks/useScrollToSection";
+
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
+  const { scrollToSection } = useScrollToSection();
+
+  const handleScrollToSegment = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    scrollToSection(href, -85);
+  };
+
+  return (
+    <footer className="bg-[#1A1A1A] text-[#F8F5F0] pt-20 pb-12 border-t border-[#A61E22]/20 font-sans">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        
+        {/* Main Grid structure — 2 columns on mobile */}
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-6 sm:gap-8 md:gap-12 pb-12 sm:pb-16 border-b border-[#A61E22]/10">
+          
+          {/* Column 1: Core Brand Identity — full width on mobile */}
+          <div className="col-span-2 md:col-span-5 space-y-4 sm:space-y-6">
+            <Logo showText={true} size="lg" />
+            <p className="text-[#F8F5F0]/70 text-[10px] sm:text-xs leading-relaxed max-w-sm">
+              Jay Durga International Trade operates as Kathmandu’s trusted importer and nationwide distributor of leading clinical skincare, dynamic color cosmetics, and professional beauty essentials.
+            </p>
+            <div className="flex items-center gap-2 sm:gap-2.5 bg-[#A61E22]/10 border border-[#A61E22]/30 px-3 py-1.5 sm:px-4 sm:py-2 w-fit">
+              <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#A61E22] shrink-0" />
+              <span className="text-[8px] sm:text-[10px] tracking-widest font-extrabold uppercase text-[#A61E22]">
+                Licensed Importer • Nepal Govt. Approved
+              </span>
+            </div>
+          </div>
+
+          {/* Column 2: Quick Links */}
+          <div className="col-span-1 md:col-span-3 space-y-3 sm:space-y-5 text-left">
+            <h4 className="font-serif text-xs sm:text-sm tracking-widest text-[#A61E22] uppercase font-bold">
+              Quick Navigation
+            </h4>
+            <ul className="space-y-2 sm:space-y-3">
+              {[
+                { label: "Home Base", href: "#home" },
+                { label: "Corporate About", href: "#about" },
+                { label: "Global Brands", href: "#brands" },
+                { label: "Product Categories", href: "#categories" },
+                { label: "Quality Assurance", href: "#why-choose-us" },
+                { label: "Contact Importer", href: "#contact" }
+              ].map((link) => (
+                <li key={link.label}>
+                  <a
+                     href={link.href}
+                     onClick={(e) => handleScrollToSegment(e, link.href)}
+                     className="text-[10px] sm:text-xs text-[#F8F5F0]/75 hover:text-[#A61E22] transition-colors leading-[1.6] sm:leading-[1.8] inline-block font-sans hover:translate-x-1 duration-300"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Complete Contact info */}
+          <div className="col-span-1 md:col-span-4 space-y-3 sm:space-y-5 text-left text-[10px] sm:text-xs">
+            <h4 className="font-serif text-xs sm:text-sm tracking-widest text-[#A61E22] uppercase font-bold">
+              Registry Office
+            </h4>
+            
+            <ul className="space-y-3 sm:space-y-4 text-[#F8F5F0]/80">
+              {/* Contact Person */}
+              <li className="space-y-0.5">
+                <span className="block text-[8px] sm:text-[9px] tracking-widest uppercase text-[#F8F5F0]/40 font-bold">
+                  Managing Rep.
+                </span>
+                <span className="text-xs sm:text-sm font-semibold font-serif text-white leading-snug">
+                  Narayan Kumar Agrawal
+                </span>
+              </li>
+
+              {/* Physical Location */}
+              <li className="flex gap-2 items-start">
+                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#A61E22] shrink-0 mt-0.5" />
+                <span className="leading-snug">Makhan, Kathmandu, Nepal</span>
+              </li>
+
+              {/* Contact Numbers */}
+              <li className="flex gap-2 items-start">
+                <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#A61E22] shrink-0 mt-0.5" />
+                <div className="space-y-1">
+                  <WhatsAppLink className="flex items-start gap-1.5 text-white hover:text-[#25D366] font-semibold transition-colors leading-snug">
+                    <WhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 mt-0.5" />
+                    <span>{CONTACT_PHONE_DISPLAY}</span>
+                  </WhatsAppLink>
+                  <span className="block text-[9px] sm:text-[11px] text-[#F8F5F0]/60 leading-snug">
+                    01-5321836 / 01-5324305
+                  </span>
+                </div>
+              </li>
+
+              {/* Email Address */}
+              <li className="flex gap-2 items-start">
+                <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#A61E22] shrink-0 mt-0.5" />
+                <a href={CONTACT_MAILTO} className="hover:text-[#A61E22] transition-colors break-all leading-snug">
+                  {CONTACT_EMAIL}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        {/* Closing copyright notice without any prohibited social links */}
+        <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-[#F8F5F0]/50">
+          <p className="font-sans">
+            &copy; {currentYear} Jay Durga International Trade. All Rights Reserved.
+          </p>
+          <p className="font-sans tracking-wide">
+            Designed to Premium Standards • Kathmandu, Nepal
+          </p>
+        </div>
+
+      </div>
+    </footer>
+  );
+}

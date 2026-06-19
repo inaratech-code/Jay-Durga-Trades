@@ -1,0 +1,17 @@
+{
+  "name": "Jay Durga Trade International",
+  "short_name": "Jay Durga",
+  "description": "Premium cosmetics and beauty distributor based in Kathmandu, Nepal.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#F8F5F0",
+  "theme_color": "#A61E22",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
