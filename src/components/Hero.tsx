@@ -44,7 +44,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative bg-[#F8F5F0] overflow-hidden min-h-[calc(100vh-120px)] flex flex-col justify-between pt-8 lg:pt-16">
+    <section id="home" className="relative bg-[#F8F5F0] overflow-hidden lg:min-h-[calc(100vh-120px)] flex flex-col justify-between pt-4 pb-6 lg:pt-16 lg:pb-0">
       {/* Decorative luxury architectural lines/grid in background */}
       <div className="absolute inset-0 z-0 opacity-15 pointer-events-none select-none">
         <div className="absolute left-1/4 top-0 bottom-0 w-[1px] bg-[#A61E22]/15" />
@@ -52,9 +52,9 @@ export default function Hero() {
         <div className="absolute top-1/3 left-0 right-0 h-[1px] bg-[#A61E22]/15" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8 w-full z-10 flex-grow grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 w-full z-10 flex-grow grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start lg:items-center">
         {/* Text Editorial Column */}
-        <div className="lg:col-span-7 flex flex-col justify-center space-y-8 text-left">
+        <div className="lg:col-span-7 flex flex-col justify-start lg:justify-center space-y-6 lg:space-y-8 text-left">
           {/* Top Label */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -135,7 +135,7 @@ export default function Hero() {
         </div>
 
         {/* Visual Editorial Image Column - Visually rich luxury beauty composition with layered cards */}
-        <div className="lg:col-span-5 relative flex justify-center items-center py-6 select-none">
+        <div className="lg:col-span-5 relative flex justify-center items-center pt-2 pb-20 sm:pb-24 lg:py-6 select-none">
           <div className="relative w-full max-w-[420px] h-[450px] sm:h-[500px]">
             {/* Elegant Double Border Reference Style Backdrop */}
             <div className="absolute inset-4 border border-[#A61E22]/10 bg-transparent pointer-events-none z-0" />
@@ -223,8 +223,8 @@ export default function Hero() {
               );
             })}
 
-            {/* floating brand stamp design, offset to the bottom-left of card cluster */}
-            <div className="absolute -bottom-2 -left-4 bg-[#A61E22] text-[#F8F5F0] py-2 px-3.5 font-serif text-center shadow-2xl border border-[#A61E22]/20 select-none z-40">
+            {/* floating brand stamp — sits below the card cluster to avoid overlap */}
+            <div className="absolute top-full left-3 mt-4 bg-[#A61E22] text-[#F8F5F0] py-2 px-3.5 font-serif text-center shadow-2xl border border-[#A61E22]/20 select-none z-40">
               <span className="block text-xl font-serif-italic leading-none">Est.</span>
               <span className="block text-[10px] font-bold uppercase tracking-widest leading-none">Nepal HUB</span>
             </div>

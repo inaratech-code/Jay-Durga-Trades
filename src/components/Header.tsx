@@ -90,8 +90,8 @@ export default function Header() {
       <header
         className={`sticky top-0 w-full z-40 transition-all duration-300 ${
           scrolled
-            ? "bg-[#F8F5F0]/95 backdrop-blur-md shadow-md border-b border-[#D4AF37]/10 py-2.5"
-            : "bg-[#F8F5F0]/90 border-b border-transparent py-4"
+            ? "bg-[#F8F5F0]/95 backdrop-blur-md shadow-md border-b border-[#D4AF37]/10 py-2"
+            : "bg-[#F8F5F0]/90 border-b border-transparent py-2.5 lg:py-4"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">

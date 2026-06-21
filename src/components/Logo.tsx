@@ -8,9 +8,9 @@ interface LogoProps {
 
 export default function Logo({ className = "", size = "md" }: LogoProps) {
   const heights: Record<string, string> = {
-    sm: "h-14 sm:h-16",
-    md: "h-24 sm:h-32",
-    lg: "h-32 sm:h-40",
+    sm: "h-12 sm:h-14",
+    md: "h-16 sm:h-24 md:h-32",
+    lg: "h-24 sm:h-32 md:h-40",
   };
 
   return (
