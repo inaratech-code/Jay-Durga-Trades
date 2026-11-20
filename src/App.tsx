@@ -3,6 +3,9 @@ import { ArrowUp } from "lucide-react";
 import { useLenis } from "lenis/react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import WhatsAppIcon from "./components/WhatsAppIcon";
+import WhatsAppLink from "./components/WhatsAppLink";
+import { CONTACT_WHATSAPP_DISPLAY } from "./constants/contact";
 import { useScrollToSection } from "./hooks/useScrollToSection";
 
 const AboutUs = lazy(() => import("./components/AboutUs"));
@@ -44,11 +47,19 @@ export default function App() {
         <Footer />
       </Suspense>
 
+      <WhatsAppLink
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl hover:bg-[#1ebe5d] hover:-translate-y-0.5 transition-all"
+        title="Chat on WhatsApp"
+        aria-label={`Chat on WhatsApp ${CONTACT_WHATSAPP_DISPLAY}`}
+      >
+        <WhatsAppIcon className="w-7 h-7" />
+      </WhatsAppLink>
+
       {showToTopBtn && (
         <button
           type="button"
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-40 bg-[#A61E22] text-white p-3 rounded-none shadow-2xl border border-[#D4AF37]/35 hover:bg-[#8B0000] hover:-translate-y-0.5 duration-300 transition-all flex items-center justify-center cursor-pointer opacity-100"
+          className="fixed bottom-24 right-6 z-40 bg-[#A61E22] text-white p-3 rounded-none shadow-2xl border border-[#D4AF37]/35 hover:bg-[#8B0000] hover:-translate-y-0.5 duration-300 transition-all flex items-center justify-center cursor-pointer opacity-100"
           title="Scroll To Top"
           aria-label="Scroll to top"
         >
