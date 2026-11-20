@@ -7,8 +7,6 @@ import {
   CONTACT_REPRESENTATIVE_EMAIL,
   CONTACT_REPRESENTATIVE_MAILTO,
   CONTACT_WHATSAPP_DISPLAY,
-  CONTACT_PHONE_DISPLAY,
-  CONTACT_PHONE_TEL,
   CONTACT_ADDRESS,
   CONTACT_MAP_URL,
   CONTACT_LANDLINES,
@@ -111,16 +109,6 @@ export default function Footer() {
                   <WhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 mt-0.5 text-[#A61E22]" />
                   <span>{CONTACT_WHATSAPP_DISPLAY}</span>
                 </WhatsAppLink>
-              </li>
-
-              <li className="flex gap-2 items-start">
-                <TelephoneIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px] shrink-0 mt-0.5" />
-                <a
-                  href={CONTACT_PHONE_TEL}
-                  className="hover:text-[#A61E22] transition-colors leading-snug font-semibold"
-                >
-                  {CONTACT_PHONE_DISPLAY}
-                </a>
               </li>
 
               {/* Landlines */}

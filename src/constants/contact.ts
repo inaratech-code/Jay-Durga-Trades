@@ -1,5 +1,3 @@
-export const CONTACT_PHONE_DISPLAY = "+977 9851048223";
-export const CONTACT_PHONE_TEL = "tel:+9779851048223";
 export const CONTACT_LANDLINES = [
   { display: "01-5321836", tel: "tel:+97715321836" },
   { display: "01-5324305", tel: "tel:+97715324305" },

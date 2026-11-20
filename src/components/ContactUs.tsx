@@ -7,8 +7,6 @@ import {
   CONTACT_REPRESENTATIVE_EMAIL,
   CONTACT_REPRESENTATIVE_MAILTO,
   CONTACT_WHATSAPP_DISPLAY,
-  CONTACT_PHONE_DISPLAY,
-  CONTACT_PHONE_TEL,
   CONTACT_ADDRESS,
   CONTACT_MAP_URL,
   CONTACT_LANDLINES,
@@ -154,12 +152,6 @@ export default function ContactUs() {
                     <WhatsAppIcon className="w-4 h-4 text-[#A61E22]" />
                     {CONTACT_WHATSAPP_DISPLAY}
                   </WhatsAppLink>
-                  <a
-                    href={CONTACT_PHONE_TEL}
-                    className="block text-[11px] text-[#1A1A1A]/60 font-sans mt-2 hover:text-[#A61E22] transition-colors"
-                  >
-                    Or call {CONTACT_PHONE_DISPLAY}
-                  </a>
                   <div className="flex items-start gap-2 mt-2">
                     <TelephoneIcon className="w-4 h-4 shrink-0 mt-0.5" />
                     <div className="text-xs font-sans">
