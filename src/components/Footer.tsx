@@ -4,7 +4,11 @@ import { Mail, MapPin, Award } from "lucide-react";
 import {
   CONTACT_EMAIL,
   CONTACT_MAILTO,
+  CONTACT_REPRESENTATIVE_EMAIL,
+  CONTACT_REPRESENTATIVE_MAILTO,
+  CONTACT_WHATSAPP_DISPLAY,
   CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_TEL,
   CONTACT_ADDRESS,
   CONTACT_MAP_URL,
   CONTACT_LANDLINES,
@@ -105,8 +109,18 @@ export default function Footer() {
               <li className="flex gap-2 items-start">
                 <WhatsAppLink className="flex items-start gap-2 text-white hover:text-[#25D366] font-semibold transition-colors leading-snug">
                   <WhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 mt-0.5 text-[#A61E22]" />
-                  <span>{CONTACT_PHONE_DISPLAY}</span>
+                  <span>{CONTACT_WHATSAPP_DISPLAY}</span>
                 </WhatsAppLink>
+              </li>
+
+              <li className="flex gap-2 items-start">
+                <TelephoneIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px] shrink-0 mt-0.5" />
+                <a
+                  href={CONTACT_PHONE_TEL}
+                  className="hover:text-[#A61E22] transition-colors leading-snug font-semibold"
+                >
+                  {CONTACT_PHONE_DISPLAY}
+                </a>
               </li>
 
               {/* Landlines */}
@@ -132,9 +146,20 @@ export default function Footer() {
               {/* Email Address */}
               <li className="flex gap-2 items-start">
                 <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#A61E22] shrink-0 mt-0.5" />
-                <a href={CONTACT_MAILTO} className="hover:text-[#A61E22] transition-colors break-all leading-snug">
-                  {CONTACT_EMAIL}
-                </a>
+                <span className="leading-snug break-all">
+                  <a href={CONTACT_MAILTO} className="hover:text-[#A61E22] transition-colors">
+                    {CONTACT_EMAIL}
+                  </a>
+                  <a
+                    href={CONTACT_REPRESENTATIVE_MAILTO}
+                    className="block mt-1 hover:text-[#A61E22] transition-colors"
+                  >
+                    <span className="block text-[8px] sm:text-[9px] tracking-widest uppercase text-[#F8F5F0]/40 font-bold">
+                      Company Representative
+                    </span>
+                    {CONTACT_REPRESENTATIVE_EMAIL}
+                  </a>
+                </span>
               </li>
             </ul>
           </div>

@@ -6,7 +6,9 @@ import { motion, AnimatePresence } from "motion/react";
 import {
   CONTACT_EMAIL,
   CONTACT_MAILTO,
-  CONTACT_PHONE_DISPLAY,
+  CONTACT_REPRESENTATIVE_EMAIL,
+  CONTACT_REPRESENTATIVE_MAILTO,
+  CONTACT_WHATSAPP_DISPLAY,
   CONTACT_ADDRESS,
   CONTACT_MAP_URL,
 } from "../constants/contact";
@@ -60,7 +62,7 @@ export default function Header() {
         <div className="flex items-center gap-4 md:gap-6">
           <WhatsAppLink className="flex items-center gap-1.5 hover:text-[#D4AF37] transition-colors">
             <WhatsAppIcon className="w-3.5 h-3.5 text-[#D4AF37]" />
-            {CONTACT_PHONE_DISPLAY}
+            {CONTACT_WHATSAPP_DISPLAY}
           </WhatsAppLink>
           <span className="hidden sm:flex items-center gap-1.5 hover:text-[#D4AF37] transition-colors">
             <span className="text-[#D4AF37] font-bold">Landline:</span> 01-5321836
@@ -72,7 +74,14 @@ export default function Header() {
             className="flex items-center gap-1.5 hover:text-[#D4AF37] transition-colors"
           >
             <Mail className="w-3.5 h-3.5 text-[#D4AF37]" />
-            {CONTACT_EMAIL}
+            <span className="hidden sm:inline">Trade:</span> {CONTACT_EMAIL}
+          </a>
+          <a
+            href={CONTACT_REPRESENTATIVE_MAILTO}
+            className="hidden xl:flex items-center gap-1.5 hover:text-[#D4AF37] transition-colors"
+          >
+            <Mail className="w-3.5 h-3.5 text-[#D4AF37]" />
+            <span>Rep:</span> {CONTACT_REPRESENTATIVE_EMAIL}
           </a>
           <a
             href={CONTACT_MAP_URL}

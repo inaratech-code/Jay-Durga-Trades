@@ -89,7 +89,7 @@ Keep a list of changes and send them to your developer in writing (email or What
 
 ## Need Help?
 
-- **Business inquiries:** WhatsApp **+977 9851048223** or **agrawalnarayan@hotmail.com**  
+- **Business inquiries:** WhatsApp **+977 9702601045**, **agrawalnarayan@hotmail.com**, or company representative **Vivek.agrawal.2025@gmail.com**  
 - **Website technical support:** Contact the person or company who built or hosts this site  
 
 ---

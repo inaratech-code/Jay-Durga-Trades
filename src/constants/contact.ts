@@ -6,11 +6,14 @@ export const CONTACT_LANDLINES = [
 ] as const;
 export const CONTACT_EMAIL = "agrawalnarayan@hotmail.com";
 export const CONTACT_MAILTO = `mailto:${CONTACT_EMAIL}`;
+export const CONTACT_REPRESENTATIVE_EMAIL = "Vivek.agrawal.2025@gmail.com";
+export const CONTACT_REPRESENTATIVE_MAILTO = `mailto:${CONTACT_REPRESENTATIVE_EMAIL}`;
+export const CONTACT_WHATSAPP_DISPLAY = "+977 9702601045";
 export const CONTACT_ADDRESS = "Makhan Tole, Kathmandu, Nepal";
 export const CONTACT_MAP_URL =
   "https://www.google.com/maps/search/?api=1&query=Makhan+Tole,+Kathmandu,+Nepal";
 
-const WHATSAPP_PHONE = "9779851048223";
+const WHATSAPP_PHONE = "9779702601045";
 const WHATSAPP_MESSAGE =
   "Hello, I would like to inquire about Jay Durga International Trade.";
 

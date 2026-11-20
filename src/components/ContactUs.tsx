@@ -4,6 +4,9 @@ import { motion } from "motion/react";
 import {
   CONTACT_EMAIL,
   CONTACT_MAILTO,
+  CONTACT_REPRESENTATIVE_EMAIL,
+  CONTACT_REPRESENTATIVE_MAILTO,
+  CONTACT_WHATSAPP_DISPLAY,
   CONTACT_PHONE_DISPLAY,
   CONTACT_PHONE_TEL,
   CONTACT_ADDRESS,
@@ -149,13 +152,13 @@ export default function ContactUs() {
                   </h4>
                   <WhatsAppLink className="inline-flex items-center gap-2 text-base font-sans font-bold text-[#1A1A1A] mt-1.5 hover:text-[#A61E22] transition-colors">
                     <WhatsAppIcon className="w-4 h-4 text-[#A61E22]" />
-                    {CONTACT_PHONE_DISPLAY}
+                    {CONTACT_WHATSAPP_DISPLAY}
                   </WhatsAppLink>
                   <a
                     href={CONTACT_PHONE_TEL}
                     className="block text-[11px] text-[#1A1A1A]/60 font-sans mt-2 hover:text-[#A61E22] transition-colors"
                   >
-                    Or call directly
+                    Or call {CONTACT_PHONE_DISPLAY}
                   </a>
                   <div className="flex items-start gap-2 mt-2">
                     <TelephoneIcon className="w-4 h-4 shrink-0 mt-0.5" />
@@ -200,6 +203,17 @@ export default function ContactUs() {
                     className="block text-base font-serif font-bold text-[#A61E22] hover:underline mt-1.5 break-all"
                   >
                     {CONTACT_EMAIL}
+                  </a>
+                  <a
+                    href={CONTACT_REPRESENTATIVE_MAILTO}
+                    className="block mt-3 break-all"
+                  >
+                    <span className="block text-[10px] uppercase tracking-[0.12em] font-extrabold text-[#1A1A1A]/50 font-sans">
+                      Company Representative
+                    </span>
+                    <span className="block text-sm font-serif font-bold text-[#A61E22] hover:underline mt-1">
+                      {CONTACT_REPRESENTATIVE_EMAIL}
+                    </span>
                   </a>
                 </div>
               </div>
